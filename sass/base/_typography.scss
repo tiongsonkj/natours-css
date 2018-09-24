@@ -1,0 +1,87 @@
+body {
+    font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	/*1.7 times bigger than the predefined line height*/
+	line-height: 1.7;
+	color: $color-grey-dark;
+	padding: 30px;
+}
+
+.heading-primary {
+	color: $color-white;
+	text-transform: uppercase;
+
+	/*determines if backpart of element is visibile or hidden from user*/
+	backface-visibility: hidden;
+
+    margin-bottom: 60px;
+    
+    &--main {
+        /*this is already span and default of span is inline element like text so it will be on same line. block elements occupy entire width that they have available*/
+        display: block;
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: 35px;
+    
+        /*having our heading primary main "Outdoors", animated from what we created down below. we are calling it first and then calling the duration of the animation.*/
+        animation-name: moveInLeft;
+        animation-duration: 5s;
+        /*animation-timing-function: ease-out; animation will start slower and accelerate over time. there are more than one animation-timing-functions*/
+        /*animation-iteration-count: 3; will have the animation occur 3 times*/
+        /*animation-delay:3s; will delay the animation by 3 seconds.*/
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 20px;
+        /*font weights are shown in index when linking the google font LATO*/
+        font-weight: 700;
+        /*letter spacing spaces out letters of the text*/
+        letter-spacing: 17.4px;
+    
+        /*having our heading primary sub "Is Where Life Happens", animated from what we created down below. we are calling it first and then calling the duration of the animation.*/
+        animation-name: moveInRight;
+        animation-duration: 5s;
+    }
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    
+    // this will highlight the text  
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+
+    // background gets clipped exactly where the text is
+    // background was green and text was black. but the webkit reversed the roles
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
+
+    &:hover {
+        // skewing in Y direction 2 degrees, X direction 15 degrees
+        // scales 110 %
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+}
+
+.heading-tertiary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: 1.6rem;
+
+    // selecting everything except the last child
+    &:not(:last-child) {
+        // 3 rem equals 30px
+        margin-bottom: 3rem;
+    }
+}

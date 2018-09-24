@@ -1,0 +1,415 @@
+// imported sass abstract files i.e. "_functions.scss"
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// imported sass base files i.e. "_base.scss"
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+// other imported sass files
+@import "pages/home";
+@import "components/button";
+@import "layout/header";
+@import "layout/grid";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/card";
+@import "components/story";
+@import "components/bg-video";
+@import "components/form";
+@import "layout/footer";
+@import "layout/navigation";
+@import "components/popup";
+
+// no code should be in this file. everything in here will be imported from other sass folders
+
+
+
+
+/* these variables are placed in the variables folder
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000; */
+
+// all *, html, and body will be going into base/_base.scss
+// *,
+// *::after,
+// *::before {
+// 	margin: 0;
+// 	padding: 0;
+// 	/*changes box model so that borders and paddings are no longer added to the total width and total height for a box*/
+// 	box-sizing: inherit;
+// }
+
+// html {
+//     font-size: 62.5%;
+// }
+
+// body {
+// 	font-family: "Lato", sans-serif;
+// 	font-weight: 400;
+// 	font-size: 16px;
+// 	/*1.7 times bigger than the predefined line height*/
+// 	line-height: 1.7;
+// 	color: $color-grey-dark;
+// 	padding: 30px;
+// }
+
+// HEADER WILL BE LOCATED IN layout/_header.scss
+// .header {
+// 	/*that at every point the height of this box should be 95% viewport height*/
+// 	height: 95vh;
+// 	background-image: linear-gradient(
+// 		to right bottom, 
+// 		rgba($color-primary-light, 0.8), 
+// 		rgba($color-primary-dark, 0.8)), 
+// 	url("../img/hero.jpg"); 
+// 	background-size: cover;
+// 	/*ensures that top of image always stays at the top of the container no matter the viewport size*/
+// 	background-position: top;
+// 	position: relative;
+
+// 	/*polygon(x-coordinate y-coordinate, x y, x y, x y)*/
+//     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    
+//     // & -> represents '.header', nested this so .header__logo-box is not needed below.
+//     &__logo-box {
+//         position: absolute;
+// 	    top: 40px;
+// 	    left: 40px;
+//     }
+
+//     &__logo {
+//         height: 3.5rem;
+//     }
+
+//     &__text-box {
+//         position: absolute;
+//         top: 40%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         text-align: center;
+//     }
+// }
+
+/*this is for the crown logo...puts it in top left corner, not needed because we nested it above!*/
+// .header__logo-box {
+// 	position: absolute;
+// 	top: 40px;
+// 	left: 40px;
+// 	/*position: relative;*/
+// }
+
+/*specifies the height of the crown logo*/
+// .header__logo {
+// 	height: 35px;
+
+// }
+
+// /*this animation happens when we hover over the logo*/
+// /*.logo:hover {
+// 	animation: moveInRight 1s ease-out;
+// }*/
+
+// .header__text-box {
+// 	position: absolute;
+// 	/*40% from the top*/
+// 	top: 40%;
+// 	/*50% from the left of the box which starts at the green*/
+// 	left: 50%;
+// 	/*50% are no longer related to parent element. this puts the text box exactly in the center*/
+// 	transform: translate(-50%, -50%);
+
+// 	/*center the text inside of the box and the button itself*/
+// 	text-align: center;
+// }
+
+/*parent element of both primarymain and primary sub*/
+// HEADING CODE WILL BE IN base/_typography.scss
+// .heading-primary {
+// 	color: $color-white;
+// 	text-transform: uppercase;
+
+// 	/*determines if backpart of element is visibile or hidden from user*/
+// 	backface-visibility: hidden;
+
+//     margin-bottom: 60px;
+    
+//     &--main {
+//         /*this is already span and default of span is inline element like text so it will be on same line. block elements occupy entire width that they have available*/
+//         display: block;
+//         font-size: 60px;
+//         font-weight: 400;
+//         letter-spacing: 35px;
+    
+//         /*having our heading primary main "Outdoors", animated from what we created down below. we are calling it first and then calling the duration of the animation.*/
+//         animation-name: moveInLeft;
+//         animation-duration: 5s;
+//         /*animation-timing-function: ease-out; animation will start slower and accelerate over time. there are more than one animation-timing-functions*/
+//         /*animation-iteration-count: 3; will have the animation occur 3 times*/
+//         /*animation-delay:3s; will delay the animation by 3 seconds.*/
+//     }
+    
+//     &--sub {
+//         display: block;
+//         font-size: 20px;
+//         /*font weights are shown in index when linking the google font LATO*/
+//         font-weight: 700;
+//         /*letter spacing spaces out letters of the text*/
+//         letter-spacing: 17.4px;
+    
+//         /*having our heading primary sub "Is Where Life Happens", animated from what we created down below. we are calling it first and then calling the duration of the animation.*/
+//         animation-name: moveInRight;
+//         animation-duration: 5s;
+//     }
+// }
+
+// .heading-primary--main {
+// 	/*this is already span and default of span is inline element like text so it will be on same line. block elements occupy entire width that they have available*/
+// 	display: block;
+// 	font-size: 60px;
+// 	font-weight: 400;
+// 	letter-spacing: 35px;
+
+// 	/*having our heading primary main "Outdoors", animated from what we created down below. we are calling it first and then calling the duration of the animation.*/
+// 	animation-name: moveInLeft;
+// 	animation-duration: 5s;
+// 	/*animation-timing-function: ease-out; animation will start slower and accelerate over time. there are more than one animation-timing-functions*/
+// 	/*animation-iteration-count: 3; will have the animation occur 3 times*/
+// 	/*animation-delay:3s; will delay the animation by 3 seconds.*/
+// }
+
+// .heading-primary--sub {
+// 	display: block;
+// 	font-size: 20px;
+// 	/*font weights are shown in index when linking the google font LATO*/
+// 	font-weight: 700;
+// 	/*letter spacing spaces out letters of the text*/
+// 	letter-spacing: 17.4px;
+
+// 	/*having our heading primary sub "Is Where Life Happens", animated from what we created down below. we are calling it first and then calling the duration of the animation.*/
+// 	animation-name: moveInRight;
+// 	animation-duration: 5s;
+// }
+
+/*makes an animation called "moveInLeft"
+	starts at 0%
+
+	100% is what happens to the animation when finished.
+*/
+
+// ALL ANIMATIONS WENT INTO base/_animations.scss
+// @keyframes moveInLeft {
+// 	0% {
+// 		opacity: 0;
+// 		/*translate in x direction from left to right, positive value goes right, negative value goes left*/
+// 		transform: translateX(-100px);
+// 	}
+	
+// 	/*at 80% make it translate to the right 20px*/
+// 	80% {
+// 		transform: translateX(20px);
+// 		/*transform: rotate(180deg); => this will rotate the text 180 degrees*/
+// 	}
+
+// 	100% {
+// 		opacity: 1;
+// 		/*translate at 0 will make it look the way it looks now. */
+// 		transform: translate(0);
+// 	}
+// }
+
+// /*makes an animation called "moveInRight"
+// 	starts at 0%
+
+// 	100% is what happens to the animation when finished.
+// */
+// @keyframes moveInRight {
+// 	0% {
+// 		opacity: 0;
+// 		/*translate in x direction from left to right, positive value goes right, negative value goes left*/
+// 		transform: translateX(100px);
+// 	}
+	
+// 	/*at 80% make it translate to the right 20px*/
+// 	80% {
+// 		transform: translateX(-20px);
+// 	}
+
+// 	100% {
+// 		opacity: 1;
+// 		/*translate at 0 will make it look the way it looks now. */
+// 		transform: translate(0);
+// 	}
+// }
+
+// /*makes an animation called "moveInBottom"
+// 	starts at 0%
+
+// 	100% is what happens to the animation when finished.
+// */
+// @keyframes moveInBottom {
+// 	0% {
+// 		opacity: 0;
+// 		/*translate in x direction from left to right, positive value goes right, negative value goes left*/
+// 		transform: translateY(30px);
+// 	}
+
+// 	100% {
+// 		opacity: 1;
+// 		/*translate at 0 will make it look the way it looks now. */
+// 		transform: translate(0);
+// 	}
+// }
+
+
+/*:link is pseudoclass...we use pseudo style classes under a special condition, it is a state of the button selector
+
+btn: visited is how the button will look after it has been clicked on/visited state*/
+// ALL OF BUTTONS WILL BE IN components/_button.scss
+// .btn{
+//     &:link,
+//     &:visited {
+//         /*changes all of text to uppercase*/
+//         text-transform: uppercase;
+//         text-decoration: none;
+//         /*15 px top and bottom, 40 px left and right*/
+//         padding: 15px 40px;
+//         display: inline-block;
+//         border-radius: 100px;
+//         transition: all .2s;
+
+//         /*position needs to be relative so that the ::after parts work of the CSS*/
+//         position: relative;
+//     }
+
+//     /*when we hover over button*/
+//     &:hover {
+//         transform: translateY(-3px);
+
+//         /*.2 => transparency value
+
+//         box shadow gives button a shadow when we hover over*/
+//         box-shadow: 0 10px 20px rgba($color-black, .2);
+
+//         &::after {
+//             transform: scaleX(1.4) scaleY(1.6);
+//             opacity: 0;
+//         }
+    
+//     }
+
+//     /*when button is being active*/
+//     &:active {
+//         transform: translateY(-1px);
+
+//         box-shadow: 0 5px 10px rgba($color-black, .2);
+//     }
+
+//     /*this is for the white button*/
+//     &--white {
+//         background-color: white;
+//         color: $color-grey-dark;
+
+//         &::after {
+//             background-color: $color-white;
+//         }
+//     }
+
+//     /*"::after" - this is the after pseudo-element. treated like the child of the button.*/
+//     &::after {
+//         content: "";
+//         display: inline-block;
+//         height: 100%;
+//         width: 100%;
+//         border-radius: 100px;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         /*z-index --> this will allow our button after feature to appear in correct order as well.*/
+//         z-index: -1;
+//         transition: all .4s;
+//     }
+
+//     &--animated {
+//         animation: moveInBottom .5s ease-out .75s;
+
+//         /*this will have the animation go after the other animation.*/
+//         animation-fill-mode: backwards;
+//     }
+// }
+// .btn:link,
+// .btn:visited {
+// 	/*changes all of text to uppercase*/
+// 	text-transform: uppercase;
+// 	text-decoration: none;
+// 	/*15 px top and bottom, 40 px left and right*/
+// 	padding: 15px 40px;
+// 	display: inline-block;
+// 	border-radius: 100px;
+// 	transition: all .2s;
+
+// 	/*position needs to be relative so that the ::after parts work of the CSS*/
+// 	position: relative;
+// }
+
+// /*when we hover over button*/
+// .btn:hover {
+// 	transform: translateY(-3px);
+
+// 	/*.2 => transparency value
+
+// 	box shadow gives button a shadow when we hover over*/
+// 	box-shadow: 0 10px 20px rgba($color-black, .2);
+// }
+
+// /*when button is being active*/
+// .btn:active {
+// 	transform: translateY(-1px);
+
+// 	box-shadow: 0 5px 10px rgba($color-black, .2);
+// }
+
+// /*this is for the white button*/
+// .btn--white {
+//     background-color: white;
+//     color: $color-grey-dark;
+// }
+
+// /*"::after" - this is the after pseudo-element. treated like the child of the button.*/
+// .btn::after {
+// 	content: "";
+// 	display: inline-block;
+// 	height: 100%;
+// 	width: 100%;
+// 	border-radius: 100px;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	/*z-index --> this will allow our button after feature to appear in correct order as well.*/
+// 	z-index: -1;
+// 	transition: all .4s;
+// }
+
+// .btn-white::after {
+// 	background-color: $color-white;
+// }
+
+// .btn:hover::after {
+// 	transform: scaleX(1.4) scaleY(1.6);
+// 	opacity: 0;
+// }
+
+// .btn--animated {
+// 	animation: moveInBottom .5s ease-out .75s;
+
+// 	/*this will have the animation go after the other animation.*/
+// 	animation-fill-mode: backwards;
+// }
